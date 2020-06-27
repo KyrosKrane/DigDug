@@ -1,0 +1,10 @@
+## Interface: 80300
+## Title: DigDug
+## Version: @project-version@
+## Author: KyrosKrane Sylvanblade
+## Notes: Fixes the Archaeology dig site progress bar to correctly show nine segments.
+
+## OptionalDeps: Blizzard_ArchaeologyUI
+
+# In this add-on
+DigDug.lua
