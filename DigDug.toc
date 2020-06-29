@@ -7,4 +7,5 @@
 ## OptionalDeps: Blizzard_ArchaeologyUI
 
 # In this add-on
+Utilities.lua
 DigDug.lua
