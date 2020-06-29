@@ -4,6 +4,9 @@
 ## Author: KyrosKrane Sylvanblade
 ## Notes: Fixes the Archaeology dig site progress bar to correctly show nine segments.
 
+## X-Curse-Project-ID: 392710
+## X-WoWI-ID: 25615
+
 ## OptionalDeps: Blizzard_ArchaeologyUI
 
 # In this add-on
