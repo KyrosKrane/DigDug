@@ -25,6 +25,7 @@ DigDug.Frame, DigDug.Events = CreateFrame("Frame"), {}
 
 -- Upvalues
 local DebugPrint = DigDug.Utilities.DebugPrint
+local pairs = pairs
 
 --@alpha@
 DigDug.DebugMode = true
@@ -35,36 +36,39 @@ DigDug.DebugMode = true
 --# Main code
 --#########################################
 
-print("Hello world from >>" .. addonName .. "<<!")
-
 local frame = _G["ArcheologyDigsiteProgressBar"]
 local BarBorderAndOverlay = frame.BarBorderAndOverlay
 local SixFindPath = BarBorderAndOverlay:GetTexture()
 local NineFindPath = "Interface\\Addons\\DigDug\\ArcheologyToast9.blp"
 
 
-local function SetNine()
+-- This function forces the archaeology dig site progress bar to have nine segments
+function DigDug:SetNine()
 	BarBorderAndOverlay:SetTexture(NineFindPath)
 	BarBorderAndOverlay:SetTexCoord(0.00390625, 0.76953125, 0.08984375, 0.15625000)
-end
+end -- SetNine()
 
-local function SetSix()
+
+-- This function forces the archaeology dig site progress bar to have six segments
+function DigDug:SetSix()
 	BarBorderAndOverlay:SetTexture(SixFindPath)
 	BarBorderAndOverlay:SetTexCoord(0.00390625, 0.76953125, 0.08984375, 0.15625000)
-end
+end -- SetSix()
 
+
+-- This function swaps the progress bar display. Intended for debugging only.
 local function Swap()
 	local OldTexture = BarBorderAndOverlay:GetTexture()
 	if OldTexture == SixFindPath then
-		SetNine()
+		DigDug:SetNine()
 	else
-		SetSix()
+		DigDug:SetSix()
 	end
-end
+end -- Swap()
 
 
 --#########################################
---# Register for events
+--# Implement the event handlers
 --#########################################
 
 -- On-load handler for addon initialization.
@@ -78,15 +82,15 @@ end -- APR.Events:PLAYER_LOGIN()
 function DigDug.Events:ARCHAEOLOGY_SURVEY_CAST(numFindsCompleted, totalFinds, researchBranchID, successfulFind)
 	DebugPrint("In ARCHAEOLOGY_SURVEY_CAST, totalFinds is " .. totalFinds)
 	if 9 == totalFinds then
-		SetNine()
+		DigDug:SetNine()
 	else
-		SetSix()
+		DigDug:SetSix()
 	end
 end -- DigDug.Events:ARCHAEOLOGY_SURVEY_CAST()
 
 
 --#########################################
---# Implement the event handlers
+--# Register the events we use
 --#########################################
 
 -- Create the event handler function.
@@ -106,5 +110,5 @@ end
 --#########################################
 
 -- Create a sample slash command to test the addon.
-SLASH_TTT1 = "/ttt"
-SlashCmdList.TTT = function (...) Swap(...) end
+SLASH_DIGDIGSWAPBAR1 = "/DigDugSwapBar"
+SlashCmdList.DIGDIGSWAPBAR = function (...) Swap(...) end

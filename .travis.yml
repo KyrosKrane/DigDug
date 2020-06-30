@@ -42,4 +42,4 @@ jobs:
 #
 #     script:
 #       - bash release.sh
-#       - bash release.sh -g 1.13.2
+#       - bash release.sh -g 1.13.4
