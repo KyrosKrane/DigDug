@@ -11,7 +11,7 @@
 -- This addon fixes the archaeology progress bar to correctly show nine segments when appropriate.
 
 --#########################################
---# Description
+--# Main code
 --#########################################
 
 -- Grab the WoW-defined addon folder name and storage table for our addon
@@ -25,23 +25,33 @@ print("Hello world from >>" .. addonName .. "<<!")
 
 local frame = _G["ArcheologyDigsiteProgressBar"]
 local BarBorderAndOverlay = frame.BarBorderAndOverlay
-
+local SixBarPath = BarBorderAndOverlay:GetTexture()
 local NineBarPath = "Interface\\Addons\\DigDug\\ArcheologyToast9.blp"
 
-if frame then
-	print("dumping Frame")
-	DigDug.Utilities.DumpTable(frame)
-else
-	print("Frame is not valid")
+
+local function SetNine()
+	BarBorderAndOverlay:SetTexture(NineBarPath)
+	BarBorderAndOverlay:SetTexCoord(0.00390625, 0.76953125, 0.08984375, 0.15625000)
 end
 
-if BarBorderAndOverlay then
-	print("dumping BarBorderAndOverlay")
-	DigDug.Utilities.DumpTable(BarBorderAndOverlay)
-else
-	print("BarBorderAndOverlay is not valid")
+local function SetSix()
+	BarBorderAndOverlay:SetTexture(SixBarPath)
+	BarBorderAndOverlay:SetTexCoord(0.00390625, 0.76953125, 0.08984375, 0.15625000)
 end
 
+local function Swap()
+	local OldTexture = BarBorderAndOverlay:GetTexture()
+	if OldTexture == SixBarPath then
+		SetNine()
+	else
+		SetSix()
+	end
+end
 
-BarBorderAndOverlay:SetTexture(NineBarPath)
-BarBorderAndOverlay:SetTexCoord(0.00390625, 0.76953125, 0.08984375, 0.15625000)
+--BarBorderAndOverlay:SetTexture(NineBarPath)
+--BarBorderAndOverlay:SetTexCoord(0.00390625, 0.76953125, 0.08984375, 0.15625000)
+
+
+-- Create a sample slash command to test the addon.
+SLASH_TTT1 = "/ttt"
+SlashCmdList.TTT = function (...) Swap(...) end
