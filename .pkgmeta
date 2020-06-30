@@ -6,7 +6,7 @@ ignore: # Files and directories beginning with a dot (such as .git) are automati
     - Curse description in markup.txt
     - WoWI description in BBCode.txt
     - Extras
-    - BLP Prep
+    - BLP prep
 
 externals:
 
