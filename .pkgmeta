@@ -3,7 +3,7 @@ enable-nolib-creation: no
 
 ignore: # Files and directories beginning with a dot (such as .git) are automatically ignored, as is the pgkmeta file itself.
     - README.md
-    - Curse description in markup.txt
+    - Curse description in markup.md
     - WoWI description in BBCode.txt
     - Extras
     - BLP prep
