@@ -1,0 +1,7 @@
+[SIZE="5"]Nine is not six![/SIZE]
+This addon replaces the archaeology dig site progress bar from a six-segment bar to a nine-segment bar in the newer areas that allow for nine finds. Really, this should be part of the default Blizzard interface, but they haven't seen fit to fix it for three expansions, so here we are!
+
+[SIZE="4"]Future update plans[/SIZE]
+Let me know what you'd like to see in the comments section. Or for live support, [URL="https://discord.gg/YRBDrxQ"]visit my Discord server[/URL]!
+
+Bitcoin and Bitcoin Cash donations gratefully accepted at: 1Kyros6w6CHRFLXZCwhBPNTbRPUNJ35L97
