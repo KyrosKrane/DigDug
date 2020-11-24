@@ -7,6 +7,9 @@
 ## X-Curse-Project-ID: 392710
 ## X-WoWI-ID: 25615
 
+# File revision: @file-abbreviated-hash@
+# File last updated: @file-date-iso@
+
 ## OptionalDeps: Blizzard_ArchaeologyUI
 
 # In this add-on
