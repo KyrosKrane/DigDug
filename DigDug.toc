@@ -6,6 +6,7 @@
 
 ## X-Curse-Project-ID: 392710
 ## X-WoWI-ID: 25615
+## X-Wago-ID: 7nGvArKx
 
 # File revision: @file-abbreviated-hash@
 # File last updated: @file-date-iso@
