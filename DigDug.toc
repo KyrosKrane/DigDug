@@ -3,6 +3,7 @@
 ## Version: @project-version@
 ## Author: KyrosKrane Sylvanblade
 ## Notes: Fixes the Archaeology dig site progress bar to correctly show nine segments.
+## IconTexture: Interface\Icons\Inv_misc_shovel_01
 
 ## X-Curse-Project-ID: 392710
 ## X-WoWI-ID: 25615
